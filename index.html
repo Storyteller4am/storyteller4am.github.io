@@ -8,135 +8,221 @@
 
     <title>4 AM Stories</title>
     <link rel="icon" type="image/x-icon" href="4am.ico">
-    <meta name="description" content="A world of stories, imagination and upcoming books.">
+    <meta name="description" content="A world of stories, imagination and upcoming books, written in the hour before the world wakes up.">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- TITLE SECTION -->
+<div class="vignette"></div>
 
-<header class="hero-title">
+<!-- ===================================
+     HERO / THE CLOCK
+=================================== -->
+
+<header class="hero">
+
+    <p class="hero-eyebrow">the archive opens at</p>
+
+    <div class="clock-wrap">
+        <div id="liveClock" class="clock">04:00</div>
+        <div id="liveClockMirror" class="clock clock-mirror" aria-hidden="true">04:00</div>
+    </div>
+
     <h1>4 AM Stories</h1>
-    <p>
-        Stories that stay with you long after the final page.
+
+    <p class="hero-sub">
+        Stories that stay with you long after the final page —
+        written in the one hour nobody else is awake for.
     </p>
+
+    <a href="#portals" class="scroll-cue" aria-label="Scroll to explore">
+        <span></span>
+    </a>
+
 </header>
 
-<!-- SOCIAL SECTION -->
+<!-- ===================================
+     PORTALS — LINKEDIN / INSTAGRAM / YOUTUBE
+=================================== -->
 
-<section class="social-section">
-    <a href="https://www.linkedin.com/in/4amstoryteller/"
-       target="_blank"
-       class="social-card linkedin">
+<section class="portals" id="portals">
 
-        <div class="social-content">
-            <h2>LinkedIn</h2>
-            <p>
-                Follow my storytelling journey.
-            </p>
-        </div>
-    </a>
+    <p class="section-eyebrow">where the story continues</p>
+    <h2 class="section-title">Three Doors Into The Archive</h2>
 
-    <a href="https://www.instagram.com/4amstoryteller/"
-       target="_blank"
-       class="social-card instagram">
+    <div class="portal-grid">
 
-        <div class="social-content">
-            <h2>Instagram</h2>
-            <p>
-                Behind the scenes, stories and updates.
-            </p>
-        </div>
-    </a>
+        <a href="https://www.linkedin.com/in/4amstoryteller/" target="_blank" rel="noopener" class="portal-card portal-linkedin">
+            <div class="portal-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4.5 8.5h3.2V19H4.5V8.5ZM6.1 4a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8ZM10.3 8.5h3.06v1.44h.04c.43-.78 1.47-1.6 3.02-1.6 3.23 0 3.83 2.07 3.83 4.77V19h-3.2v-5.4c0-1.29-.02-2.94-1.83-2.94-1.83 0-2.11 1.39-2.11 2.85V19h-3.2V8.5Z" fill="currentColor"/></svg>
+            </div>
+            <h3>LinkedIn</h3>
+            <p class="portal-tag">The Notebook</p>
+            <p class="portal-desc">Long-form essays, philosophy, and the chapters of The Unseen Curriculum.</p>
+            <span class="portal-cta">Read the essays →</span>
+        </a>
+
+        <a href="https://www.instagram.com/4amstoryteller/" target="_blank" rel="noopener" class="portal-card portal-instagram">
+            <div class="portal-icon">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+            </div>
+            <h3>Instagram</h3>
+            <p class="portal-tag">The Reels</p>
+            <p class="portal-desc">Behind the scenes, fast cuts, and the questions that send you to LinkedIn for the answer.</p>
+            <span class="portal-cta">Watch the reels →</span>
+        </a>
+
+        <a href="#" target="_blank" rel="noopener" class="portal-card portal-youtube">
+            <div class="portal-icon">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 9.3v5.4l4.6-2.7-4.6-2.7Z" fill="currentColor"/></svg>
+            </div>
+            <h3>YouTube</h3>
+            <p class="portal-tag">The Archive Films</p>
+            <p class="portal-desc">Longer, slower, cinematic — the stories that needed more than sixty seconds.</p>
+            <span class="portal-cta">Coming soon →</span>
+        </a>
+
+    </div>
+
 </section>
 
-<!-- UPCOMING BOOK -->
+<!-- ===================================
+     MIRROR HOURS — SIGNATURE TICKER
+=================================== -->
 
-<section class="book-banner">
+<div class="mirror-hours" aria-hidden="true">
+    <div class="ticker-track">
+        <span>04:04</span><span>12:21</span><span>03:33</span><span>01:11</span><span>04:04</span><span>12:21</span><span>03:33</span><span>01:11</span>
+        <span>04:04</span><span>12:21</span><span>03:33</span><span>01:11</span><span>04:04</span><span>12:21</span><span>03:33</span><span>01:11</span>
+    </div>
+    <div class="ticker-track ticker-reflection">
+        <span>04:04</span><span>12:21</span><span>03:33</span><span>01:11</span><span>04:04</span><span>12:21</span><span>03:33</span><span>01:11</span>
+        <span>04:04</span><span>12:21</span><span>03:33</span><span>01:11</span><span>04:04</span><span>12:21</span><span>03:33</span><span>01:11</span>
+    </div>
+</div>
+
+<!-- ===================================
+     UPCOMING BOOK
+=================================== -->
+
+<section class="book-banner reveal">
 
     <div class="book-left">
-        <img src="assets/images/book-cover.png" alt="Book Cover">
+        <!-- PASTE YOUR BOOK COVER HERE: replace src below -->
+        <img src="assets/images/book-cover.png" alt="The Lost Map — book cover"
+             onerror="this.parentElement.classList.add('img-fallback'); this.remove();">
+        <div class="book-left-fallback">The Lost Map</div>
     </div>
 
     <div class="book-right">
-            <span class="coming-soon">
-                COMING SOON
-            </span>
-        <h2>
-            The Lost Map
-        </h2>
-        <p>
-            An unforgettable adventure filled with mystery,
-            destiny and courage.
 
-            The journey is about to begin.
+        <span class="coming-soon">Coming Soon</span>
+
+        <h2>The Lost Map</h2>
+
+        <p>
+            Maya Mehta spent her whole life following a script she never wrote.
+            This is the story of what happens the day she burns it —
+            a philosophical thriller about inheritance, identity, and the
+            terrifying freedom of starting over.
         </p>
 
-        <div class="price">
-            ₹299
-        </div>
+        <div class="price">₹299</div>
 
-        <button class="notify-btn">
-            Notify Me
-        </button>
+        <button class="notify-btn">Notify Me</button>
+
     </div>
 
 </section>
+
+<!-- ===================================
+     CHAPTERS FROM THE ARCHIVE
+=================================== -->
 
 <section class="stories-section">
 
-    <h2>Read My Stories</h2>
+    <p class="section-eyebrow">read my stories</p>
+    <h2 class="section-title">Chapters From The Archive</h2>
 
     <div class="story-cards">
-        <div class="story-card">
-            <h3>Chapter 1</h3>
-            <p>
-                The beginning of a journey that nobody expected.
-            </p>
-            <button>
-                Read More
-            </button>
-        </div>
 
-        <div class="story-card">
-            <h3>Chapter 2</h3>
-            <p>
-                New mysteries emerge from the shadows.
-            </p>
-            <button>
-                Read More
-            </button>
-        </div>
+        <article class="story-card reveal">
+            <div class="story-cover">
+                <!-- PASTE CHAPTER IMAGE HERE -->
+                <img src="assets/images/chapter-1.jpg" alt="" onerror="this.remove()">
+            </div>
+            <span class="story-tag">Essay</span>
+            <h3>The Waiting Loop</h3>
+            <p>The beginning of a journey nobody expected — and the cost of postponing your own.</p>
+            <button>Read More</button>
+        </article>
 
-        <div class="story-card">
-            <h3>Chapter 3</h3>
-            <p>
-                Some secrets should never be uncovered.
-            </p>
-            <button>
-                Read More
-            </button>
-        </div>
+        <article class="story-card reveal">
+            <div class="story-cover">
+                <img src="assets/images/chapter-2.jpg" alt="" onerror="this.remove()">
+            </div>
+            <span class="story-tag">Essay</span>
+            <h3>New Mysteries</h3>
+            <p>New questions emerge from the shadows — not everything is meant to be answered at once.</p>
+            <button>Read More</button>
+        </article>
+
+        <article class="story-card reveal">
+            <div class="story-cover">
+                <img src="assets/images/chapter-3.jpg" alt="" onerror="this.remove()">
+            </div>
+            <span class="story-tag">Story</span>
+            <h3>Some Secrets</h3>
+            <p>Some secrets should never be uncovered. Some are uncovered anyway.</p>
+            <button>Read More</button>
+        </article>
+
+        <article class="story-card reveal">
+            <div class="story-cover">
+                <img src="assets/images/chapter-4.jpg" alt="" onerror="this.remove()">
+            </div>
+            <span class="story-tag">Reel</span>
+            <h3>The Mirror Hour</h3>
+            <p>Why the same timestamp keeps finding you — a sixty-second idea, fully unpacked on LinkedIn.</p>
+            <button>Watch + Read</button>
+        </article>
+
+        <article class="story-card reveal">
+            <div class="story-cover">
+                <img src="assets/images/chapter-5.jpg" alt="" onerror="this.remove()">
+            </div>
+            <span class="story-tag">Essay</span>
+            <h3>The Archive</h3>
+            <p>Inside the mental room where every version of you that ever existed is still standing.</p>
+            <button>Read More</button>
+        </article>
+
+        <article class="story-card reveal">
+            <div class="story-cover">
+                <img src="assets/images/chapter-6.jpg" alt="" onerror="this.remove()">
+            </div>
+            <span class="story-tag">Story</span>
+            <h3>How Kael Burned the Map</h3>
+            <p>A first look at the next 4AM novel — out soon, written in the same hour as everything else.</p>
+            <button>Read More</button>
+        </article>
+
     </div>
 
 </section>
 
-<!-- FOOTER -->
+<!-- ===================================
+     FOOTER
+=================================== -->
 
 <footer>
-
-    <p>
-        Every story begins somewhere.
-        © 2026 4am
-    </p>
-
+    <p>Every story begins somewhere. © 2026 4am</p>
 </footer>
 
 <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>
