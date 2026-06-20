@@ -16,7 +16,7 @@
 
 <body class="li-body">
 
-<a href="index.html" class="li-back">← 4 AM Stories</a>
+<a href="index.html" class="li-back" id="backLink">← 4 AM Stories</a>
 
 <!-- ===================================
      BOOK 1 HERO — click to open chapters
@@ -26,19 +26,23 @@
 
   <p class="li-eyebrow">book one</p>
 
-  <div class="li-book-cover" id="bookCover">
-    <!-- PASTE BOOK 1 COVER HERE -->
-    <img src="assets/images/book1-cover.png" alt="" onerror="this.remove()">
-    <div class="li-book-cover-label">The Unseen<br>Curriculum</div>
+  <div class="li-book-cover" id="bookCover" role="button" tabindex="0" aria-label="Open Book One chapters">
+
+    <div class="li-book-inside">
+      <span class="li-explore-text">Click to explore<br>the elixir</span>
+      <span class="li-explore-arrow">→</span>
+    </div>
+
+    <div class="li-book-front">
+      <!-- PASTE BOOK 1 COVER HERE -->
+      <img src="assets/images/book1-cover.png" alt="" onerror="this.remove()">
+      <div class="li-book-cover-label">The Unseen<br>Curriculum</div>
+    </div>
+
   </div>
 
   <h1>The Unseen Curriculum</h1>
-  <p class="li-sub">10 chapters. One framework. Read in order, or wherever you left off.</p>
-
-  <button class="li-open-btn" id="openChapters">
-    Open the chapters
-    <span class="li-arrow">↓</span>
-  </button>
+  <p class="li-sub">10 chapters. One framework. Hover the cover, then click to step in.</p>
 
 </section>
 

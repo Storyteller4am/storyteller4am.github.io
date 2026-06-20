@@ -48,11 +48,10 @@ chapters.forEach(ch => {
 // Hero -> grid transition
 
 const bookHero = document.getElementById("bookHero");
-const openBtn = document.getElementById("openChapters");
 const chapterGrid = document.getElementById("chapterGrid");
 const bookCover = document.getElementById("bookCover");
 
-openBtn.addEventListener("click", () => {
+function openChapters(){
 
     // small "snap" on the cover before it collapses away
     bookCover.style.transform = "scale(1.06)";
@@ -71,4 +70,34 @@ openBtn.addEventListener("click", () => {
 
     }, 180);
 
+}
+
+bookCover.addEventListener("click", openChapters);
+
+bookCover.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openChapters();
+    }
+});
+
+// Back link: if chapters are open, go back to the book first;
+// only navigate to index.html when already on the book view
+
+const backLink = document.getElementById("backLink");
+
+backLink.addEventListener("click", (e) => {
+    if (chapterGrid.classList.contains("li-visible")) {
+        e.preventDefault();
+
+        chapterGrid.classList.remove("li-visible");
+        bookHero.classList.remove("li-collapsed");
+        bookCover.style.transform = "";
+
+        const cards = gridInner.querySelectorAll(".li-card");
+        cards.forEach(card => card.classList.remove("li-card-in"));
+
+        bookHero.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    // else: let the default link behavior send us to index.html
 });
