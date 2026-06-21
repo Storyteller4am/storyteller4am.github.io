@@ -6,9 +6,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Book One — The Unseen Curriculum | 4 AM Stories</title>
+  <title>The Library | 4 AM Stories</title>
   <link rel="icon" type="image/x-icon" href="4am.ico">
-  <meta name="description" content="Book One: The Unseen Curriculum — all chapters, on LinkedIn.">
+  <meta name="description" content="Book One: The First Manuscript. Book Two: The Unfair Advantage. All chapters, on LinkedIn.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Library | 4 AM Stories">
+  <meta property="og:description" content="Two books. One notebook. Hover a cover, then step inside.">
+  <meta property="og:image" content="assets/images/og-cover.png">
+  <meta property="og:url" content="https://storyteller4am.github.io/life/linkedin.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Library | 4 AM Stories">
+  <meta name="twitter:description" content="Two books. One notebook. Hover a cover, then step inside.">
+  <meta name="twitter:image" content="assets/images/og-cover.png">
+
   <link rel="stylesheet" href="assets/css/linkedin.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -19,41 +31,71 @@
 <a href="index.html" class="li-back" id="backLink">← 4 AM Stories</a>
 
 <!-- ===================================
-     BOOK 1 HERO — click to open chapters
+     LIBRARY — pick a book
 =================================== -->
 
-<section class="li-hero" id="bookHero">
+<section class="li-hero" id="bookLibrary">
 
-  <p class="li-eyebrow">book one</p>
+  <p class="li-eyebrow">the library</p>
+  <h1>Two Books. One Notebook.</h1>
+  <p class="li-sub">Hover a cover, then click to step inside.</p>
 
-  <div class="li-book-cover" id="bookCover" role="button" tabindex="0" aria-label="Open Book One chapters">
+  <div class="li-library-grid">
 
-    <div class="li-book-inside">
-      <span class="li-explore-text">Click to explore<br>the elixir</span>
-      <span class="li-explore-arrow">→</span>
+    <!-- BOOK ONE -->
+    <div class="li-book-cover" id="bookCover1" role="button" tabindex="0" aria-label="Open Book One chapters">
+
+      <div class="li-book-inside">
+        <span class="li-explore-text">Click to explore<br>the elixir</span>
+        <span class="li-explore-arrow">→</span>
+      </div>
+
+      <div class="li-book-front">
+        <!-- PASTE BOOK 1 COVER HERE -->
+        <img src="assets/images/book1-cover.png" alt="" onerror="this.remove()">
+        <div class="li-book-cover-label">The First<br>Manuscript</div>
+      </div>
+
     </div>
 
-    <div class="li-book-front">
-      <!-- PASTE BOOK 1 COVER HERE -->
-      <img src="assets/images/book1-cover.png" alt="" onerror="this.remove()">
-      <div class="li-book-cover-label">The Unseen<br>Curriculum</div>
+    <!-- BOOK TWO -->
+    <div class="li-book-cover" id="bookCover2" role="button" tabindex="0" aria-label="Open Book Two chapters">
+
+      <div class="li-book-inside">
+        <span class="li-explore-text">Click to explore<br>the unfair advantage</span>
+        <span class="li-explore-arrow">→</span>
+      </div>
+
+      <div class="li-book-front">
+        <!-- PASTE BOOK 2 COVER HERE -->
+        <img src="assets/images/book2-cover.png" alt="" onerror="this.remove()">
+        <div class="li-book-cover-label">The Unfair<br>Advantage</div>
+      </div>
+
     </div>
 
   </div>
 
-  <h1>The Unseen Curriculum</h1>
-  <p class="li-sub">10 chapters. One framework. Hover the cover, then click to step in.</p>
-
 </section>
 
 <!-- ===================================
-     CHAPTER GRID — hidden until opened
+     BOOK ONE — CHAPTER GRID
 =================================== -->
 
-<section class="li-chapters" id="chapterGrid">
-  <p class="li-eyebrow">all chapters</p>
-  <h2 class="li-chapters-title">Book One — The Unseen Curriculum</h2>
-  <div class="li-grid" id="chapterGridInner"></div>
+<section class="li-chapters" id="chapterGrid1">
+  <p class="li-eyebrow">book one — all chapters</p>
+  <h2 class="li-chapters-title">The First Manuscript</h2>
+  <div class="li-grid" id="chapterGridInner1"></div>
+</section>
+
+<!-- ===================================
+     BOOK TWO — CHAPTER GRID
+=================================== -->
+
+<section class="li-chapters" id="chapterGrid2">
+  <p class="li-eyebrow">book two — all chapters</p>
+  <h2 class="li-chapters-title">The Unfair Advantage</h2>
+  <div class="li-grid" id="chapterGridInner2"></div>
 </section>
 
 <footer class="li-footer">

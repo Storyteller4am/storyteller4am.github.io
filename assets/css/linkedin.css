@@ -169,6 +169,13 @@ html{ scroll-behavior:smooth; }
     line-height:1.6;
 }
 
+.li-library-grid{
+    display:flex;
+    gap:50px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
 /* ===================================
    CHAPTER GRID
 =================================== */
