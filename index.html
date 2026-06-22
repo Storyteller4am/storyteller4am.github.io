@@ -14,9 +14,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="4 AM Stories — The Archive">
     <meta property="og:description" content="Stories that stay with you long after the final page — written in the hour nobody else is awake for.">
-    <!-- PASTE A 1200x630 PREVIEW IMAGE HERE -->
     <meta property="og:image" content="assets/images/og-cover.png">
-    <!-- REPLACE WITH YOUR ACTUAL SITE URL ONCE LIVE -->
     <meta property="og:url" content="https://storyteller4am.github.io/">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -27,24 +25,31 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xai7fh1ipv");
+    </script>
+
 </head>
 
 <body>
 
 <div class="vignette"></div>
 
+<!-- ocean depth particle canvas -->
+<canvas id="oceanCanvas" aria-hidden="true"></canvas>
+
 <!-- ===================================
-     HERO / THE CLOCK
+     HERO
 =================================== -->
 
 <header class="hero">
 
-    <p class="hero-eyebrow">the archive opens at</p>
-
-    <div class="clock-wrap">
-        <div id="liveClock" class="clock">04:00</div>
-        <div id="liveClockMirror" class="clock clock-mirror" aria-hidden="true">04:00</div>
-    </div>
+    <p class="hero-eyebrow">the archive</p>
 
     <h1>4 AM Stories</h1>
 
@@ -56,14 +61,6 @@
     <a href="#portals" class="scroll-cue" aria-label="Scroll to explore">
         <span></span>
     </a>
-
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "xai7fh1ipv");
-    </script>
 
 </header>
 
@@ -134,10 +131,15 @@
 <section class="book-banner reveal">
 
     <div class="book-left">
-        <!-- PASTE YOUR BOOK COVER HERE: replace src below -->
         <img src="assets/images/book-cover.png" alt="The Lost Map — book cover"
              onerror="this.parentElement.classList.add('img-fallback'); this.remove();">
         <div class="book-left-fallback">The Lost Map</div>
+
+        <!-- IN PROGRESS BADGE -->
+        <div class="book-in-progress">
+            <span class="bip-dot"></span>
+            <span>In Progress</span>
+        </div>
     </div>
 
     <div class="book-right">
@@ -153,9 +155,14 @@
             terrifying freedom of starting over.
         </p>
 
-        <div class="price">₹299</div>
-
-        <button class="notify-btn">Notify Me</button>
+        <!-- YOUTUBE UPDATE CTA (replaces Notify Me) -->
+        <div class="yt-update-cta">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 9.3v5.4l4.6-2.7-4.6-2.7Z" fill="currentColor"/></svg>
+            <p>All news and updates will be on our YouTube channel.<br>Subscribe and hit the bell — never miss a thing.</p>
+            <a href="http://www.youtube.com/@4AMStoryteller" target="_blank" rel="noopener" class="yt-subscribe-btn">
+                Subscribe on YouTube
+            </a>
+        </div>
 
     </div>
 
@@ -174,7 +181,6 @@
 
         <article class="story-card reveal">
             <div class="story-cover">
-                <!-- PASTE CHAPTER IMAGE HERE -->
                 <img src="assets/images/chapter-1.jpg" alt="" onerror="this.remove()">
             </div>
             <span class="story-tag">Essay</span>
@@ -193,44 +199,60 @@
             <button>Read More</button>
         </article>
 
-        <article class="story-card reveal">
-            <div class="story-cover">
+        <article class="story-card locked reveal">
+            <div class="story-cover" style="position:relative;">
                 <img src="assets/images/chapter-3.jpg" alt="" onerror="this.remove()">
+                <div class="lock-icon">
+                    <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </div>
+                <span class="lock-label">coming soon</span>
             </div>
             <span class="story-tag">Story</span>
             <h3>Some Secrets</h3>
             <p>Some secrets should never be uncovered. Some are uncovered anyway.</p>
-            <button>Read More</button>
+            <button disabled>Locked</button>
         </article>
 
-        <article class="story-card reveal">
-            <div class="story-cover">
+        <article class="story-card locked reveal">
+            <div class="story-cover" style="position:relative;">
                 <img src="assets/images/chapter-4.jpg" alt="" onerror="this.remove()">
+                <div class="lock-icon">
+                    <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </div>
+                <span class="lock-label">coming soon</span>
             </div>
             <span class="story-tag">Reel</span>
             <h3>The Mirror Hour</h3>
             <p>Why the same timestamp keeps finding you — a sixty-second idea, fully unpacked on LinkedIn.</p>
-            <button>Watch + Read</button>
+            <button disabled>Locked</button>
         </article>
 
-        <article class="story-card reveal">
-            <div class="story-cover">
+        <article class="story-card locked reveal">
+            <div class="story-cover" style="position:relative;">
                 <img src="assets/images/chapter-5.jpg" alt="" onerror="this.remove()">
+                <div class="lock-icon">
+                    <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </div>
+                <span class="lock-label">coming soon</span>
             </div>
             <span class="story-tag">Essay</span>
             <h3>The Archive</h3>
             <p>Inside the mental room where every version of you that ever existed is still standing.</p>
-            <button>Read More</button>
+            <button disabled>Locked</button>
         </article>
 
-        <article class="story-card reveal">
-            <div class="story-cover">
+        <article class="story-card locked reveal">
+            <div class="story-cover" style="position:relative;">
                 <img src="assets/images/chapter-6.jpg" alt="" onerror="this.remove()">
+                <div class="lock-icon">
+                    <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </div>
+                <span class="lock-label">coming soon</span>
             </div>
             <span class="story-tag">Story</span>
             <h3>How Kael Burned the Map</h3>
             <p>A first look at the next 4AM novel — out soon, written in the same hour as everything else.</p>
-            <button>Read More</button>
+            <button disabled>Locked</button>
         </article>
 
     </div>

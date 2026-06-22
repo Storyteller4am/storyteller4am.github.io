@@ -2,25 +2,80 @@
 // 4 AM STORIES
 // =====================================
 
-// Live mirrored clock — updates every second, ties to the "Mirror Hours" motif
+// ---- Ocean particle canvas ----
 
-function updateClock(){
-    const now = new Date();
-    const h = String(now.getHours()).padStart(2,"0");
-    const m = String(now.getMinutes()).padStart(2,"0");
-    const time = `${h}:${m}`;
+(function(){
+    const canvas = document.getElementById("oceanCanvas");
+    if (!canvas) return;
 
-    const clock = document.getElementById("liveClock");
-    const mirror = document.getElementById("liveClockMirror");
+    const ctx = canvas.getContext("2d");
+    let W, H, particles;
 
-    if (clock) clock.textContent = time;
-    if (mirror) mirror.textContent = time;
-}
+    function resize(){
+        W = canvas.width  = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+    }
 
-updateClock();
-setInterval(updateClock, 1000 * 30);
+    function randomBetween(a, b){ return a + Math.random() * (b - a); }
 
-// Scroll reveal
+    function createParticle(){
+        return {
+            x: randomBetween(0, W),
+            y: randomBetween(0, H),
+            r: randomBetween(0.8, 2.8),
+            vx: randomBetween(-0.08, 0.08),
+            vy: randomBetween(-0.14, -0.04),    // drift upward slowly
+            alpha: randomBetween(0.1, 0.55),
+            pulse: randomBetween(0, Math.PI * 2),
+            pulseSpeed: randomBetween(0.006, 0.018),
+            // color: mix of teal and soft gold
+            hue: Math.random() > 0.75 ? "212,175,106" : "42,184,212"
+        };
+    }
+
+    function initParticles(){
+        const count = Math.min(Math.floor((W * H) / 9000), 140);
+        particles = Array.from({ length: count }, createParticle);
+    }
+
+    function draw(){
+        ctx.clearRect(0, 0, W, H);
+
+        particles.forEach(p => {
+            p.pulse += p.pulseSpeed;
+            const a = p.alpha * (0.7 + 0.3 * Math.sin(p.pulse));
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${p.hue},${a.toFixed(2)})`;
+            ctx.fill();
+
+            p.x += p.vx;
+            p.y += p.vy;
+
+            // wrap around edges
+            if (p.y < -4)  p.y = H + 4;
+            if (p.x < -4)  p.x = W + 4;
+            if (p.x > W+4) p.x = -4;
+        });
+
+        requestAnimationFrame(draw);
+    }
+
+    resize();
+    initParticles();
+    draw();
+
+    window.addEventListener("resize", () => { resize(); initParticles(); });
+
+    // pause when tab is hidden (battery/perf)
+    document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) draw();
+    });
+})();
+
+
+// ---- Scroll reveal ----
 
 const revealEls = document.querySelectorAll(".reveal");
 
@@ -37,15 +92,8 @@ if (revealEls.length) {
     revealEls.forEach(el => observer.observe(el));
 }
 
-// Notify button — inline toast instead of alert()
 
-const notifyButton = document.querySelector(".notify-btn");
-
-if (notifyButton) {
-    notifyButton.addEventListener("click", () => {
-        showToast("You're on the list — the launch announcement lands here first.");
-    });
-}
+// ---- Toast utility ----
 
 function showToast(message){
     const existing = document.querySelector(".toast");
@@ -64,7 +112,6 @@ function showToast(message){
     }, 3200);
 }
 
-// minimal injected styles for the toast (kept in JS so it's a true drop-in pair of files)
 const toastStyle = document.createElement("style");
 toastStyle.textContent = `
 .toast{
@@ -72,8 +119,8 @@ toastStyle.textContent = `
     left:50%;
     bottom:30px;
     transform:translate(-50%, 20px);
-    background:#d4af6a;
-    color:#0a0e1c;
+    background:#2ab8d4;
+    color:#05101e;
     padding:14px 24px;
     border-radius:30px;
     font-family:'Inter',sans-serif;
@@ -90,9 +137,11 @@ toastStyle.textContent = `
 `;
 document.head.appendChild(toastStyle);
 
-// Story card buttons — placeholder hook, ready for real links/routes
+
+// ---- Story card locked buttons ----
 
 document.querySelectorAll(".story-card button").forEach(btn => {
+    if (btn.disabled) return;
     btn.addEventListener("click", () => {
         showToast("This chapter is being added — check back soon.");
     });
